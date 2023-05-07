@@ -1,0 +1,125 @@
+:root {
+  --typing-animation-duration: 1s;
+  --typing-animation-multiplier: 2; /* aumenta para tornar a animação mais rápida */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.chatbox {
+  width: 500px;
+  margin: 50px auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px #ccc;
+  overflow: hidden;
+}
+
+.chatlogs {
+  padding: 10px;
+  height: 400px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.chatlogs li {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.chatlogs li:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.chatlogs li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat-form {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.chat-form input[type="text"], 
+.chat-form input[type="password"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+.chat-form input[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  background-color: #008CBA;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.typing {
+  background-color: #f2f2f2;
+  color: #333;
+  height: fit-content;
+  overflow: hidden; /* Esconde o cursor enquanto o texto é digitado */
+  animation: typing calc(var(--typing-animation-multiplier) * var(--typing-animation-duration)) steps(17, end) infinite;
+  border-radius: 5px;
+  margin-bottom: 9px;
+  padding-inline: 1px;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to { 
+    width: 100%; 
+  }
+}
+
+.newUser {
+  width: fit-content;
+  background-color: green;
+  display: inline;
+}
+
+/* Estilos para dispositivos móveis */
+@media only screen and (max-width: 900px) {
+  .chatbox {
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  .chatlogs {
+    height: 200px;
+  }
+
+  .chatlogs li img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .chat-form input[type="text"], 
+  .chat-form input[type="password"] {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .chat-form input[type="submit"] {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}
